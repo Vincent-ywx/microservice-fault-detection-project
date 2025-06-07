@@ -1,0 +1,95 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "AutoMAP Metrics Dashboard",
+    "timezone": "browser",
+    "panels": [
+      {
+        "title": "Mlat (Latency)",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(istio_request_duration_milliseconds_sum[1m]) / rate(istio_request_duration_milliseconds_count[1m])",
+            "legendFormat": "Latency",
+            "interval": ""
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "ms"
+          }
+        },
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "title": "Mthr (Throughput)",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(istio_requests_total[1m])",
+            "legendFormat": "Throughput",
+            "interval": ""
+          }
+        ],
+        "gridPos": {
+          "x": 12,
+          "y": 0,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "title": "Mcon (Concurrency)",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(istio_requests_total[1m]) / (rate(istio_request_duration_milliseconds_sum[1m]) / rate(istio_request_duration_milliseconds_count[1m]))",
+            "legendFormat": "Concurrency",
+            "interval": ""
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        }
+      },
+      {
+        "title": "Mavl (Availability)",
+        "type": "timeseries",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "sum(rate(istio_requests_total{response_code=~\"2..\"}[1m])) / sum(rate(istio_requests_total[1m]))",
+            "legendFormat": "Availability",
+            "interval": ""
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percentunit"
+          }
+        },
+        "gridPos": {
+          "x": 12,
+          "y": 8,
+          "w": 12,
+          "h": 8
+        }
+      }
+    ],
+    "schemaVersion": 36,
+    "version": 1,
+    "refresh": "10s"
+  },
+  "overwrite": true
+}

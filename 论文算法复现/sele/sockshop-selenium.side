@@ -1,0 +1,114 @@
+{
+  "id": "90032535-33e2-422b-a7a7-bfb76b5b50a6",
+  "version": "2.0",
+  "name": "sockshop-selenium",
+  "url": "http://127.0.0.1:49900",
+  "tests": [{
+    "id": "edc74f3a-4aec-40e0-873f-b11e41389f7f",
+    "name": "front-end",
+    "commands": [{
+      "id": "c493c69c-788c-4d84-906d-6e4339dc8402",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "662ea066-9437-4ed5-a449-c9eb680963b6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1374x1104",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d6e884e9-7fce-464d-b131-91df8dfa9025",
+      "comment": "",
+      "command": "click",
+      "target": "css=.dropdown-toggle",
+      "targets": [
+        ["css=.dropdown-toggle", "css:finder"],
+        ["xpath=//a[contains(text(),'Catalogue')]", "xpath:link"],
+        ["xpath=//li[@id='tabCatalogue']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'category.html')]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/ul/li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "935c1353-5032-4c91-984a-f8b6bb3df33d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox:nth-child(1) input",
+      "targets": [
+        ["css=.checkbox:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@value='brown']", "xpath:attributes"],
+        ["xpath=//div[@id='filters']/div/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "11fa0a0b-cfa4-4b8f-9bcd-67d50030450e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox:nth-child(2) input",
+      "targets": [
+        ["css=.checkbox:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@value='geek']", "xpath:attributes"],
+        ["xpath=//div[@id='filters']/div[2]/label/input", "xpath:idRelative"],
+        ["xpath=//div[2]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3ff8e2d-df6d-48de-822d-3fb066a0ef4e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.checkbox:nth-child(3) input",
+      "targets": [
+        ["css=.checkbox:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@value='formal']", "xpath:attributes"],
+        ["xpath=//div[@id='filters']/div[3]/label/input", "xpath:idRelative"],
+        ["xpath=//div[3]/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d7797b3-f672-4584-b4e1-e37725cda30f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Apply",
+      "targets": [
+        ["linkText=Apply", "linkText"],
+        ["css=#filters-form > .btn", "css:finder"],
+        ["xpath=//a[@onclick='setNewTags($(\"input:checkbox:checked\").map(function () {return this.value;}).get().join(\",\"));']", "xpath:attributes"],
+        ["xpath=//form[@id='filters-form']/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[6]", "xpath:href"],
+        ["xpath=//form/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Apply')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "92225f82-4851-42e6-a00a-eccbfadac77d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View detail",
+      "targets": [
+        ["linkText=View detail", "linkText"],
+        ["css=.col-md-4:nth-child(1) .btn-default", "css:finder"],
+        ["xpath=//a[contains(text(),'View detail')]", "xpath:link"],
+        ["xpath=//div[@id='products']/div/div/div[2]/p[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'detail.html?id=3395a43e-2d88-40de-b95f-e00e1502085b')])[5]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'View detail')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "681f4129-53f9-4776-93cb-fe2fcf7ceac7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["edc74f3a-4aec-40e0-873f-b11e41389f7f"]
+  }],
+  "urls": ["http://127.0.0.1:49900/"],
+  "plugins": []
+}

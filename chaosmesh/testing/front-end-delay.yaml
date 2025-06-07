@@ -1,0 +1,20 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: front-end-network-delay
+  namespace: chaos-testing
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces:
+      - sock-shop
+    labelSelectors:
+      app: front-end
+  delay:
+    latency: "2000ms" # 注入 2 秒延迟
+    correlation: "100" # 所有请求都延迟
+    jitter: "0ms"
+  duration: "2m" # 故障持续 2 分钟
+  scheduler:
+    cron: "@once" # 立即执行一次

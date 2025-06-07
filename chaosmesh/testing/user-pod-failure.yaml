@@ -1,0 +1,16 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: PodChaos
+metadata:
+  name: user-pod-failure
+  namespace: chaos-testing    # 注意这里要和 Helm 安装命名空间一致
+spec:
+  action: pod-failure
+  mode: one
+  selector:
+    namespaces:
+      - sock-shop
+    labelSelectors:
+      app: user               # 确保这个 label 存在
+  duration: "30s"
+  scheduler:
+    cron: "@once"
